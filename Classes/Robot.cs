@@ -162,4 +162,31 @@ namespace ROBOTS
             this.isAlive = false;
         }
     }
+
+    // class baru dengan polimorfism
+    class Transformer : NormalRobot
+    {
+        public Random random;
+        public Transformer(string _nama, int _energi, int _armor, int _serangan) : base(_nama, _energi, _armor, _serangan)
+        {
+            this.isAlive = true;
+            random = new Random();
+        }
+        // ada chance untuk critical damage
+        public override void serang(Robot target)
+        {
+            bool isCrit = random.Next(0, 100) < 25;
+            int critDamage = this.serangan * 2;
+            if (isCrit)
+            {
+                target.diserang(critDamage);
+                Console.WriteLine($"[SERANG CRITICAL!] {this.nama} menyerang {target.nama} sebesar {critDamage}! Energi {target.nama} : {target.energi}");
+            }
+            else
+            {
+                target.diserang(this.serangan);
+                Console.WriteLine($"[SERANG] {this.nama} menyerang {target.nama} sebesar {this.serangan}! Energi {target.nama} : {target.energi}");
+            }
+        }
+    }
 }

@@ -15,7 +15,7 @@ namespace MAIN
             BosRobot morris = new BosRobot("Morris", 1000, 80, 100, 20);
             NormalRobot lewis = new NormalRobot("Lewis", 300, 100, 120);
             NormalRobot penny = new NormalRobot("Penny", 200, 30, 200);
-            NormalRobot gus = new NormalRobot("Gus", 450, 70, 110);
+            Transformer gus = new Transformer("Gus", 450, 70, 110);
             // ini bisa dilakukan secara dinamis dengan menggunakan list
 
             // inisisasi kemampuan
