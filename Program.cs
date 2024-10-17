@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using TUGAS2.Classes;
+using ROBOTS;
+using IKEMAMPUAN;
+
 
 namespace MAIN
 {
@@ -54,6 +56,13 @@ namespace MAIN
                     allRobot.kurangiCooldown(listKemampuan);
                     allRobot.updateAbilityAktif();
                 }
+
+                // mekanisme regain energi
+                morris.energi += 10;
+                lewis.energi += 10;
+                penny.energi += 10;
+                gus.energi += 10;
+
 
                 morris.cetakInformasi();
 
